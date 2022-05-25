@@ -3,8 +3,7 @@ import axios from 'axios';
 const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
 interface Todo {
-  id: Number;
-  s;
+  id: number;
   title: string;
   completed: boolean;
 }
@@ -12,16 +11,16 @@ interface Todo {
 axios.get(url).then((response) => {
   const todo: Todo = response.data;
 
-  const Id = todo.id;
-  const completed = todo.completed;
-  const title = todo.title;
-
-  console.log(`
-      The Todo with id : ${Id}
-      Has a title : ${title}
-      Is it finished ? ${completed}
-  `);
+  logTodo(todo.id, todo.title, todo.completed);
 });
+
+const logTodo = (id: Number, title: string, completed: boolean) => {
+  console.log(`
+    The Todo with id : ${id}
+    Has a title : ${title}
+    Is it finished ? ${completed}
+`);
+};
 
 //! To Complile :
 // 1. tsc index.ts .
