@@ -22,3 +22,15 @@ const logger = (message: string): void => {
 const throwError = (message: string): never => {
   throw new Error(message);
 };
+
+const forecast = {
+  date: new Date(),
+  weather: 'sunny',
+};
+
+const logweather = ({ date, weather }: { date: Date; weather: string }) => {
+  console.log(forecast.date);
+  console.log(forecast.weather);
+};
+
+logweather(forecast);
